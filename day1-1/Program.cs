@@ -9,6 +9,8 @@ List<Elf> elfs = await CalculateCaloriesPerElf(foods);
 
 Console.WriteLine(elfs.Max(e => e.TotalNumberOfCalories));
 
+Console.WriteLine(elfs.OrderByDescending(e=> e.TotalNumberOfCalories).Take(3).Sum(e=> e.TotalNumberOfCalories));
+
 async Task<List<Elf>> CalculateCaloriesPerElf(string[] foods)
 {
     List<Elf> _elfs = new List<Elf>();
